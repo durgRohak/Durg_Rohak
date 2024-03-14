@@ -18,4 +18,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/fort_main_image/Vasota.jpg
+    - assets/fort/Vasota.jpg
+    - assets/fort/Torna.jpg

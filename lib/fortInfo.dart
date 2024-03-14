@@ -18,7 +18,7 @@ class _FortScreenState extends State<FortScreen> {
         margin: const EdgeInsets.all(20),
         child: Column(
           children: [
-            const SizedBox(height: 60),
+            const SizedBox(height: 40),
             Expanded(
               child: ListView.builder(
                 itemCount: modelClass.length,
@@ -26,7 +26,7 @@ class _FortScreenState extends State<FortScreen> {
                   return GestureDetector(
                     onTap: () {},
                     child: Container(
-                      margin: const EdgeInsets.only(bottom: 20),
+                      margin: const EdgeInsets.only(bottom: 40),
                       height: 200,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 183, 217, 234),
@@ -34,7 +34,7 @@ class _FortScreenState extends State<FortScreen> {
                         boxShadow: const [
                           BoxShadow(
                             color: Colors.black,
-                            offset: Offset(2, 2),
+                            //offset:,
                             blurRadius: 5,
                             blurStyle: BlurStyle.outer,
                           ),
@@ -42,9 +42,13 @@ class _FortScreenState extends State<FortScreen> {
                       ),
                       child: Stack(
                         children: [
-                          Image.asset(
-                            modelClass[i].fortImage,
-                            fit: BoxFit.cover,
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Image.asset(
+                              modelClass[i].fortImage,
+                              width: 400,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           Align(
                             alignment: Alignment.bottomLeft,
@@ -53,9 +57,9 @@ class _FortScreenState extends State<FortScreen> {
                               child: Text(
                                 modelClass[i].description,
                                 style: const TextStyle(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w800,
-                                ),
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.red),
                               ),
                             ),
                           ),

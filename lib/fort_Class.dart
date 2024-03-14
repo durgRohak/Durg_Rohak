@@ -10,7 +10,8 @@ class FortInfo {
 }
 
 List<FortInfo> modelClass = [
-  FortInfo(fortImage: "assets", description: "Hiii", duration: 6),
-    FortInfo(fortImage: "assets", description: "Byee", duration: 4),
-  
+  FortInfo(
+      fortImage: "assets/fort/Vasota.jpg", description: "Hiii", duration: 6),
+  FortInfo(
+      fortImage: "assets/fort/Torna.jpg", description: "Byee", duration: 4),
 ];
