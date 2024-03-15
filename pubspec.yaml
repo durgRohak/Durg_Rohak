@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +21,7 @@ flutter:
   assets:
     - assets/fort/Vasota.jpg
     - assets/fort/Torna.jpg
+    - assets/fort/Rajgad_Fort.jpg
+    - assets/fort/Harihar.jpg
+    - assets/fort/devkunda.jpg
+    - assets/fort/ratangad.jpg
