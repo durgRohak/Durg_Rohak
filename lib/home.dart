@@ -10,10 +10,7 @@ class _HomeScreenState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        
-      body: const SingleChildScrollView(
-        
-      ),
+      body: const SingleChildScrollView(),
     );
   }
 }

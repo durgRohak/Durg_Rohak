@@ -1,8 +1,8 @@
-import 'package:durg_rohak1/fort_Total.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'fort_Class.dart';
+import 'fort_Total.dart';
 
 class FortScreen extends StatefulWidget {
   const FortScreen({super.key});
@@ -16,68 +16,99 @@ class _FortScreenState extends State<FortScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const  Color.fromARGB(255, 9, 9, 9),
-      body: Container(
-        margin: const EdgeInsets.only(
-          left: 10,
-          right: 10,
-        ),
-        child: Container(
-          color: const Color.fromARGB(255, 22, 22, 22),
-          child: Column(
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 45,
+          ),
+          Row(
             children: [
-              const SizedBox(height: 10),
-              Text(
-                "Durga-Rohak",
-                style:
-                    GoogleFonts.lato(fontSize: 27, fontWeight: FontWeight.w700),
+              const Padding(
+                padding:
+                    EdgeInsets.only(left: 10, top: 25, bottom: 10, right: 10),
               ),
-              Expanded(
-                child: ListView.builder(
+              Text(
+                "Hello Trekker",
+                style: GoogleFonts.quicksand(
+                  fontSize: 27,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 90, top: 15, right: 10),
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 25),
+                child: Text(
+                  "Lets choose Next Trip......",
+                  style: GoogleFonts.quicksand(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Expanded(
+            child: Container(
+              //color: Colors.grey,
+              // margin: const EdgeInsets.only(left:10,right: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(60),
+                  color: const Color.fromARGB(255, 232, 224, 224)),
+              child: ListView.builder(
                   itemCount: modelClass.length,
                   itemBuilder: (BuildContext context, int i) {
                     return GestureDetector(
                       onTap: () {
-                         Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const InfoScreen()),
-            );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const InfoScreen()),
+                        );
                       },
                       child: Container(
-                        margin: const EdgeInsets.only(bottom: 25),
-                        height: 195,
+                        margin: const EdgeInsets.only(
+                            left: 10, bottom: 15, right: 10,),
+                        height: 219,
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 183, 217, 234),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(20),
                           boxShadow: const [
                             BoxShadow(
-                              color: Colors.black,
-                              //offset:,
-                              blurRadius: 5,
-                              blurStyle: BlurStyle.outer,
+                              color: Color.fromARGB(255, 26, 25, 25),
+                              offset: Offset(0, 2),
+                              blurRadius: 7,
+                              // blurStyle: BlurStyle.outer,
                             ),
                           ],
                         ),
                         child: Stack(
                           children: [
-                            Align(
-                              alignment: Alignment.bottomRight,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
                               child: Image.asset(
                                 modelClass[i].fortImage,
-                                width: 400,
-                                fit: BoxFit.cover,
+                                width: double.maxFinite,
+                                height: double.maxFinite,
+                                fit: BoxFit.fill,
                               ),
                             ),
                             Align(
                               alignment: Alignment.bottomLeft,
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(18.0),
                                 child: Text(
                                   modelClass[i].description,
                                   style: const TextStyle(
                                       fontSize: 32,
                                       fontWeight: FontWeight.w800,
-                                      color: Color.fromARGB(255, 149, 248, 235)),
+                                      color:
+                                          Color.fromARGB(255, 149, 248, 235)),
                                 ),
                               ),
                             ),
@@ -85,12 +116,10 @@ class _FortScreenState extends State<FortScreen> {
                         ),
                       ),
                     );
-                  },
-                ),
-              ),
-            ],
+                  }),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
